@@ -4,7 +4,7 @@
 
 /** Max width + horizontal padding aligned site-wide */
 export const pageContainer =
-  "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8";
+  "mx-auto w-full max-w-7xl px-6 md:px-8";
 
 /** Vertical section rhythm */
 export const sectionY = "py-10 md:py-16 lg:py-20";
@@ -30,17 +30,17 @@ export const heroLead =
 
 /** Standard section H2 (centered blocks) */
 export const sectionTitle =
-  "text-pretty text-2xl font-semibold tracking-tight text-primary sm:text-3xl lg:text-[2.125rem] lg:leading-snug";
+  "text-pretty break-words text-xl font-semibold tracking-tight text-primary md:text-3xl md:leading-snug";
 
 export const sectionSubtitle =
-  "mt-4 text-pretty text-sm leading-relaxed text-[#374151] sm:text-base lg:text-lg";
+  "mt-4 text-pretty break-words text-base leading-relaxed text-[#374151] md:text-lg lg:text-xl";
 
 /** Headings on dark section bands */
 export const sectionTitleOnDark =
-  "text-pretty text-2xl font-semibold tracking-tight text-primary sm:text-3xl lg:text-[2.125rem] lg:leading-snug";
+  "text-pretty break-words text-xl font-semibold tracking-tight text-primary md:text-3xl md:leading-snug";
 
 export const sectionSubtitleOnDark =
-  "mt-4 text-pretty text-sm leading-relaxed text-[#374151] sm:text-base lg:text-lg";
+  "mt-4 text-pretty break-words text-base leading-relaxed text-[#374151] md:text-lg lg:text-xl";
 
 /** Accent rule under titles */
 export const sectionRule = "mx-auto mt-5 h-0.5 w-14 rounded-full bg-accent";
@@ -54,10 +54,10 @@ export const bodyProse =
 
 /** Page H1 (Over Ons, Contact, …) */
 export const pageTitle =
-  "text-pretty text-2xl font-semibold tracking-tight text-primary sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]";
+  "text-pretty break-words text-2xl font-semibold tracking-tight text-primary md:text-4xl md:leading-[1.1]";
 
 export const pageLead =
-  "mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-[#374151] sm:text-xl";
+  "mt-6 max-w-2xl text-pretty break-words text-sm leading-relaxed text-[#374151] md:text-base";
 
 /** Card headings + body */
 export const cardTitle =

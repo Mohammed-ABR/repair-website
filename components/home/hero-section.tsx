@@ -68,25 +68,25 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 py-10 md:py-24">
-        <div className="grid items-center gap-8 md:grid-cols-2">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-12 md:px-8 md:py-16">
+        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 md:gap-8">
           <div className="space-y-4 text-center text-black md:text-left md:text-white">
             <m.h1
-              className="text-pretty text-2xl font-bold leading-tight tracking-tight md:text-5xl"
+              className="text-pretty break-words text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-5xl"
               {...fadeUp(0)}
             >
               Herstelling van huishoudtoestellen binnen 24u
             </m.h1>
 
-            <m.p className="text-base font-medium leading-relaxed text-gray-600 md:text-white/90 sm:text-lg" {...fadeUp(1)}>
+            <m.p className="break-words text-base font-medium leading-relaxed text-gray-600 md:text-lg lg:text-xl md:text-white/90" {...fadeUp(1)}>
               Snel, betrouwbaar en professioneel in België
             </m.p>
 
-            <m.ul className="space-y-2 text-sm text-gray-700 md:text-white/90 sm:text-base" {...fadeUp(2)} role="list">
+            <m.ul className="space-y-2 text-sm text-gray-700 md:text-base md:text-white/90" {...fadeUp(2)} role="list">
               {checklistItems.map((line) => (
                 <li key={line} className="flex items-start justify-center gap-2.5 text-left leading-relaxed md:justify-start">
                   <CheckIcon className="mt-0.5 text-emerald-600" />
-                  <span>{line}</span>
+                  <span className="break-words">{line}</span>
                 </li>
               ))}
               <li className="font-semibold text-emerald-600 md:text-emerald-400">Geen oplossing? Geen kosten.</li>
@@ -107,7 +107,7 @@ export function HeroSection() {
               <m.a
                 href={getPhoneHref(contact.phone)}
                 aria-label={`Bel ${phoneDisplay}`}
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-gray-300 px-6 text-base font-semibold text-black transition-colors hover:bg-gray-50 md:border-white md:text-white md:hover:bg-white/10 sm:w-auto"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-gray-300 px-6 text-base font-semibold text-black transition-colors hover:bg-gray-50 sm:w-auto md:border-white md:text-white md:hover:bg-white/10"
                 whileHover={motionHover}
                 whileTap={motionTap}
                 transition={buttonHoverSpring}
@@ -124,7 +124,7 @@ export function HeroSection() {
               width={1200}
               height={800}
               sizes="100vw"
-              className="h-[200px] w-full rounded-xl object-cover shadow-lg"
+              className="h-auto w-full rounded-xl object-cover shadow-lg"
               priority
             />
           </div>

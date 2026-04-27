@@ -35,6 +35,24 @@ body {
   color: var(--primary);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+* {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+span {
+  overflow-wrap: break-word;
 }
 
 /* Global footer visibility override */

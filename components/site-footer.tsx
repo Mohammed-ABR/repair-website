@@ -22,7 +22,7 @@ export function SiteFooter() {
       className="border-t border-primary/10 bg-white shadow-[0_-1px_0_0_rgb(10_37_64_/0.04)]"
       {...getScrollRevealProps(reduceMotion)}
     >
-      <div className="mx-auto max-w-7xl px-4 py-10 md:py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           <m.div
             className="space-y-4 rounded-2xl border border-primary/10 bg-background/60 p-5 shadow-soft ring-1 ring-primary/6 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md motion-reduce:transition-none motion-reduce:hover:translate-y-0"

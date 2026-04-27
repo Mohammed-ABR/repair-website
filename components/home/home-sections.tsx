@@ -273,7 +273,7 @@ export function CommonProblemsSection() {
           <h2 className={sectionTitle}>Veelvoorkomende problemen</h2>
         </div>
 
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
           {commonProblems.map((item, i) => (
             <m.li key={item.device} {...getScrollRevealChildProps(reduceMotion, i)}>
               <m.article
@@ -286,7 +286,7 @@ export function CommonProblemsSection() {
 
                 <ul className="mt-5 space-y-3">
                   {item.issues.map((issue) => (
-                    <li key={issue} className="flex items-start gap-3 wrap-break-word text-sm leading-relaxed text-foreground/80 sm:text-[0.95rem]">
+                    <li key={issue} className="flex items-start gap-3 break-words text-sm leading-relaxed text-foreground/80 md:text-base">
                       <CheckListIcon />
                       <span>{issue}</span>
                     </li>
@@ -296,7 +296,7 @@ export function CommonProblemsSection() {
                 <div className="mt-7">
                   <Link
                     href="/herstelling-aanvragen"
-                    className={`${buttonPrimary} inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold shadow-soft-md md:w-auto`}
+                    className={`${buttonPrimary} inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold shadow-soft-md sm:w-auto`}
                   >
                     Herstelling aanvragen
                   </Link>
@@ -331,7 +331,7 @@ export function TrustStripSection() {
       {...getScrollRevealProps(reduceMotion)}
     >
       <div className={`${pageContainer} py-10 md:py-16`}>
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           {content.trustStrip.map((item, i) => (
             <m.li
               key={item.title}
@@ -371,7 +371,7 @@ export function ServicesCardsSection() {
             Professionele herstelling, onderhoud en installatie met snelle service in Vlaanderen.
           </p>
         </div>
-        <ul className="mt-10 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        <ul className="mt-10 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {core.map((service, i) => {
             const src = homeCoreServiceImages[service.id];
             return (
@@ -426,7 +426,7 @@ export function ServicesCardsSection() {
                     <div className="mt-6">
                       <Link
                         href="/diensten"
-                        className={`${buttonPrimary} inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold shadow-soft-md md:w-auto`}
+                        className={`${buttonPrimary} inline-flex min-h-11 w-full items-center justify-center rounded-xl px-5 text-sm font-semibold shadow-soft-md sm:w-auto`}
                       >
                         Meer info
                       </Link>
@@ -487,7 +487,7 @@ export function DevicesGridSection() {
             {content.devicesSectionSubtitle}
           </m.p>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3`}>
           {gallery.map((item, index) => (
             <m.li key={item.id} {...getScrollRevealChildProps(reduceMotion, index)}>
               <m.article
@@ -510,13 +510,13 @@ export function DevicesGridSection() {
                 </div>
                 <div className="space-y-4 p-4 sm:p-6">
                   <h3 className="text-xl font-semibold tracking-tight text-primary">{item.label}</h3>
-                  <p className="text-sm leading-relaxed text-[#374151]">
+                  <p className="break-words text-sm leading-relaxed text-[#374151] md:text-base">
                     Start niet, lekt water, maakt lawaai
                   </p>
                   <m.button
                     type="button"
                     onClick={() => setSelectedDevice(item)}
-                    className={`${buttonPrimary} min-h-11 w-full px-5 md:w-auto`}
+                    className={`${buttonPrimary} min-h-11 w-full px-5 sm:w-auto`}
                     whileHover={reduceMotion ? undefined : { scale: 1.03 }}
                     whileTap={reduceMotion ? undefined : { scale: 0.98 }}
                     transition={{ duration: 0.2 }}
@@ -573,8 +573,8 @@ export function DevicesGridSection() {
               </div>
 
               <div className="space-y-6 p-5 sm:p-8">
-                <h3 className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">{selectedDevice.label}</h3>
-                <p className="text-sm leading-relaxed text-[#374151] sm:text-base">
+                <h3 className="break-words text-xl font-bold tracking-tight text-primary md:text-3xl">{selectedDevice.label}</h3>
+                <p className="break-words text-sm leading-relaxed text-[#374151] md:text-base">
                   Wij herstellen alle problemen snel en professioneel.
                 </p>
                 <ul className="grid gap-3 text-sm text-[#374151] sm:text-base">
@@ -622,7 +622,7 @@ export function PricingSection() {
               <p className="mt-2 text-5xl font-bold tracking-tight text-primary sm:text-6xl">
                 {pricingSection.diagnosePrice}
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/75">
+              <p className="mt-4 break-words text-sm leading-relaxed text-foreground/75 md:text-base">
                 Vaste diagnoseprijs, daarna een heldere offerte voor het herstel, afhankelijk van het
                 probleem en onderdelen.
               </p>
@@ -652,7 +652,7 @@ export function WhyChooseSection() {
           <h2 className={sectionTitle}>{content.homeWhyChooseTitle}</h2>
           <p className={sectionSubtitle}>{content.homeWhyChooseSubtitle}</p>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
           {content.homeWhyChoose.map((point, i) => (
             <m.li key={point.title} {...getScrollRevealChildProps(reduceMotion, i)}>
               <div className={cardGlass}>
@@ -690,8 +690,8 @@ export function AboutSection() {
       className="border-b border-primary/10 bg-[#f7f8fa]"
       {...getScrollRevealProps(reduceMotion)}
     >
-      <div className={`${pageContainer} py-20 sm:py-24 lg:py-28`}>
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+      <div className={`${pageContainer} py-12 md:py-16 lg:py-20`}>
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-8 lg:grid-cols-12 lg:gap-12">
           <m.div className="lg:col-span-6" {...getScrollRevealChildProps(reduceMotion, 0)}>
             <m.h2
               className="text-3xl font-bold tracking-tight text-primary sm:text-4xl"
@@ -800,10 +800,10 @@ export function BrandsShowcaseSection() {
         <div className={sectionIntro}>
           <h2 className={sectionTitle}>Merken die wij herstellen</h2>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
           {premiumBrands.map((brand, i) => (
             <m.li key={brand.name} {...getScrollRevealChildProps(reduceMotion, i)}>
-              <div className="group flex min-h-[64px] items-center justify-center px-3 py-2">
+              <div className="group flex min-h-16 items-center justify-center px-3 py-2">
                 <Image
                   src={`https://cdn.simpleicons.org/${brand.slug}`}
                   alt={brand.name}
@@ -831,7 +831,7 @@ export function ReviewsSection() {
           <h2 className={sectionTitleOnDark}>{content.reviewsSectionTitle}</h2>
           <p className={sectionSubtitleOnDark}>{content.reviewsSectionSubtitle}</p>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-5`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
           {content.reviews.map((review, i) => (
             <m.li key={review.name + review.location} {...getScrollRevealChildProps(reduceMotion, i)}>
               <article className={`${cardReview} h-full`}>
@@ -848,7 +848,7 @@ export function ReviewsSection() {
                     <p className="text-xs tracking-wide text-foreground/50">{review.location}</p>
                   </div>
                 </div>
-                <p className="mt-5 flex-1 text-sm leading-relaxed text-foreground/85">&ldquo;{review.text}&rdquo;</p>
+                <p className="mt-5 flex-1 break-words text-sm leading-relaxed text-foreground/85 md:text-base">&ldquo;{review.text}&rdquo;</p>
               </article>
             </m.li>
           ))}
@@ -902,7 +902,7 @@ export function LocationsSection() {
                       </span>
                       <h3 className="text-lg font-semibold tracking-tight text-primary">{item.region}</h3>
                     </div>
-                    <p className="mt-4 text-sm leading-relaxed text-foreground/80">{item.cities.join(", ")}</p>
+                    <p className="mt-4 break-words text-sm leading-relaxed text-foreground/80 md:text-base">{item.cities.join(", ")}</p>
                   </article>
                 </m.li>
               ))}
@@ -914,7 +914,7 @@ export function LocationsSection() {
           </m.div>
         </div>
 
-        <p className="mt-10 text-center text-base font-medium text-white/80 sm:mt-12 sm:text-lg">
+        <p className="mt-10 text-center text-base font-medium text-white/80 md:text-lg lg:text-xl sm:mt-12">
           Wij zijn actief in heel Vlaanderen en omgeving
         </p>
       </div>
@@ -929,7 +929,7 @@ export function FaqSection() {
   return (
     <m.section className="border-b border-primary/10 bg-background" {...getScrollRevealProps(reduceMotion)}>
       <div className={`${pageContainer} ${sectionY}`}>
-        <div className="mx-auto max-w-[800px]">
+        <div className="mx-auto max-w-3xl">
           <div className={sectionIntro}>
             <h2 className={sectionTitle}>Veelgestelde vragen</h2>
           </div>
@@ -984,7 +984,7 @@ export function FaqSection() {
                           transition={reduceMotion ? { duration: 0 } : { duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                           className="overflow-hidden"
                         >
-                          <p className="px-6 pb-6 text-sm leading-relaxed text-foreground/80 sm:px-7 sm:pb-7 sm:text-[0.96rem]">
+                          <p className="break-words px-6 pb-6 text-sm leading-relaxed text-foreground/80 sm:px-7 sm:pb-7 md:text-base">
                             {item.answer}
                           </p>
                         </m.div>
@@ -1071,10 +1071,10 @@ export function CtaSection() {
       />
       <div className={`${pageContainer} relative py-10 md:py-16 lg:py-20`}>
         <div className="mx-auto max-w-2xl text-center sm:max-w-3xl">
-          <h2 className="text-pretty text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2.5rem] lg:leading-tight">
+          <h2 className="text-pretty break-words text-xl font-semibold tracking-tight md:text-3xl">
             {content.ctaSectionTitle}
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-white/88 sm:text-base lg:text-xl sm:leading-relaxed">
+          <p className="mt-4 break-words text-sm leading-relaxed text-white/88 md:text-base">
             {content.ctaSectionDescription}
           </p>
           <div className="mt-8 sm:mt-10">

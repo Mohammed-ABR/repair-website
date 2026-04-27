@@ -41,8 +41,8 @@ const trustPoints = [
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const sectionSpacing = "py-10 md:py-16 lg:py-20";
-const headingClass = "text-2xl font-bold tracking-tight text-primary sm:text-3xl lg:text-4xl";
-const bodyClass = "text-sm leading-relaxed text-foreground/80 sm:text-base lg:text-lg";
+const headingClass = "break-words text-xl font-bold tracking-tight text-primary md:text-3xl";
+const bodyClass = "break-words text-base leading-relaxed text-foreground/80 md:text-lg lg:text-xl";
 
 function fade(reduceMotion: boolean, delay = 0) {
   return {
@@ -58,7 +58,7 @@ export function DienstenPage() {
 
   return (
     <div className="overflow-hidden bg-[#f8fafc]">
-      <section className="relative isolate min-h-[52vh] overflow-hidden border-b border-white/10">
+      <section className="relative isolate overflow-hidden border-b border-white/10">
         <Image
           src="/images/services/repair-service.jpg"
           alt="Onze diensten"
@@ -69,10 +69,10 @@ export function DienstenPage() {
         />
         <div className="pointer-events-none absolute inset-0 bg-black/35" aria-hidden />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-black/50 via-primary/40 to-transparent" aria-hidden />
-        <div className={`relative z-10 ${pageContainer} flex min-h-[52vh] items-center justify-center py-10 md:py-16`}>
+        <div className={`relative z-10 ${pageContainer} flex items-center justify-center py-10 md:py-16`}>
           <m.div className="max-w-3xl text-center text-white" {...fade(Boolean(reduceMotion), 0)}>
-            <h1 className="text-2xl font-bold tracking-tight sm:text-4xl lg:text-6xl">Onze diensten</h1>
-            <p className="mt-4 text-sm font-medium leading-relaxed text-white/92 sm:text-base lg:text-xl">
+            <h1 className="break-words text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">Onze diensten</h1>
+            <p className="mt-4 break-words text-sm font-medium leading-relaxed text-white/92 md:text-base">
               Snelle en professionele service voor alle huishoudtoestellen
             </p>
           </m.div>
@@ -88,7 +88,7 @@ export function DienstenPage() {
               professionele afwerking.
             </p>
           </m.div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {services.map((service, i) => (
               <m.article
                 key={service.id}
@@ -108,8 +108,8 @@ export function DienstenPage() {
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/52 via-black/8 to-transparent" aria-hidden />
                 </div>
                 <div className="flex flex-1 flex-col p-4 sm:p-6">
-                  <h3 className="text-xl font-semibold tracking-tight text-primary sm:text-[1.7rem]">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/80 sm:text-base">{service.text}</p>
+                  <h3 className="break-words text-xl font-semibold tracking-tight text-primary md:text-3xl">{service.title}</h3>
+                  <p className="mt-3 break-words text-base leading-relaxed text-foreground/80 md:text-lg lg:text-xl">{service.text}</p>
                   <ul className="mt-5 space-y-2.5">
                     {service.checklist.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm font-semibold text-foreground/82 sm:text-[0.95rem]">
@@ -123,7 +123,7 @@ export function DienstenPage() {
                     ))}
                   </ul>
                   <div className="mt-7">
-                    <Link href="/herstelling-aanvragen" className={`${buttonPrimary} min-h-12 w-full rounded-2xl px-6 text-base shadow-soft-lg md:w-auto`}>
+                    <Link href="/herstelling-aanvragen" className={`${buttonPrimary} min-h-12 w-full rounded-2xl px-6 text-base shadow-soft-lg sm:w-auto`}>
                       Aanvragen
                     </Link>
                   </div>
@@ -161,7 +161,7 @@ export function DienstenPage() {
       <section className="border-t border-primary/10 bg-white">
         <div className={`${pageContainer} py-10 text-center md:py-16 lg:py-20`}>
           <m.div className="mx-auto max-w-3xl" {...fade(Boolean(reduceMotion), 0)}>
-            <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">Probleem met uw toestel?</h2>
+            <h2 className="break-words text-xl font-bold tracking-tight text-primary md:text-3xl">Probleem met uw toestel?</h2>
             <div className="mt-8">
               <Link
                 href="/herstelling-aanvragen"

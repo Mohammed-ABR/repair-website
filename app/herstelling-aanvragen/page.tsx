@@ -151,12 +151,12 @@ export default function HerstellingAanvragenPage() {
 
   return (
     <div className="min-h-[85vh] bg-linear-to-b from-slate-50 via-white to-slate-50/80">
-      <div className={`${pageContainer} py-10 sm:py-14 lg:py-16`}>
-        <div className="mx-auto w-full max-w-[600px]">
-          <h1 className="text-balance text-center text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+      <div className={`${pageContainer} py-10 md:py-16`}>
+        <div className="mx-auto w-full max-w-xl">
+          <h1 className="text-balance break-words text-center text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-5xl">
             Herstelling aanvragen
           </h1>
-          <p className="mt-3 text-center text-base leading-relaxed text-foreground/70 sm:text-lg">
+          <p className="mt-3 break-words text-center text-sm leading-relaxed text-foreground/70 md:text-base">
             Vul het formulier in — wij plannen snel een interventie of bellen u terug.
           </p>
 

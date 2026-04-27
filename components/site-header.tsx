@@ -4,14 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { PhoneIcon } from "@/components/icons/phone-icon";
 import {
   buttonPrimary,
   buttonPrimaryCompact,
   interactiveIcon,
 } from "@/lib/button-classes";
 import { content } from "@/lib/content";
-import { formatBelgianDisplayPhone, getPhoneHref } from "@/lib/format-phone";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -44,11 +42,11 @@ export function SiteHeader() {
         scrolled ? "shadow-[0_10px_30px_-18px_rgba(15,23,42,0.34)]" : "shadow-none"
       }`}
     >
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:min-h-18 lg:gap-6 lg:px-8">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between overflow-x-hidden px-4 py-3 sm:gap-3 lg:min-h-18 lg:gap-6">
         {/* Left: logo image + company name */}
         <Link
           href="/"
-          className="relative z-10 flex min-w-0 max-w-[min(100%,15rem)] shrink-0 items-center gap-2 sm:max-w-none sm:gap-3"
+          className="relative z-10 flex min-w-0 shrink-0 items-center gap-2 sm:gap-3"
           aria-label={`${content.companyName}, home`}
           onClick={() => setOpen(false)}
         >
@@ -57,9 +55,9 @@ export function SiteHeader() {
             alt=""
             width={160}
             height={48}
-            className="h-9 w-auto rounded-md object-contain object-left shadow-sm ring-1 ring-black/5 sm:h-11"
+            className="h-8 w-auto rounded-md object-contain object-left shadow-sm ring-1 ring-black/5 sm:h-11"
           />
-          <span className="text-pretty text-sm font-bold leading-snug tracking-tight text-primary sm:text-base lg:text-lg">
+          <span className="hidden text-pretty text-sm font-bold leading-snug tracking-tight text-primary sm:inline sm:text-base lg:text-lg">
             {content.companyName}
           </span>
         </Link>
@@ -87,25 +85,18 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* Right: phone, CTA, mobile menu */}
-        <div className="relative z-10 flex shrink-0 items-center gap-1.5 sm:gap-2">
-          <a
-            href={getPhoneHref(content.contact.phone)}
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-accent bg-accent text-white shadow-soft-md transition-[transform,background-color,box-shadow,border-color,filter] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105 hover:border-accent hover:brightness-110 hover:shadow-soft-lg active:scale-100 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:hover:brightness-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:h-11 sm:w-11"
-            aria-label={`Bel ${formatBelgianDisplayPhone(content.contact.phone)}`}
-          >
-            <PhoneIcon className="h-[1.35rem] w-[1.35rem]" />
-          </a>
+        {/* Right: CTA + mobile menu */}
+        <div className="relative z-10 flex items-center gap-2">
           <Link
             href="/herstelling-aanvragen"
-            className={`${buttonPrimaryCompact} inline-flex min-h-10 rounded-lg px-3 text-xs shadow-soft-md sm:min-h-11 sm:rounded-xl sm:px-4 sm:text-sm`}
+            className={`${buttonPrimaryCompact} inline-flex max-w-full shrink-0 whitespace-nowrap rounded-lg px-3 py-2 text-sm shadow-soft-md sm:min-h-11 sm:rounded-xl sm:px-4`}
             onClick={() => setOpen(false)}
           >
             Herstelling aanvragen
           </Link>
           <button
             type="button"
-            className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/12 bg-white text-primary shadow-sm hover:border-primary/20 hover:bg-primary/4 lg:hidden ${interactiveIcon}`}
+            className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-primary/12 bg-white text-primary shadow-sm hover:border-primary/20 hover:bg-primary/4 lg:hidden ${interactiveIcon}`}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Menu sluiten" : "Menu openen"}

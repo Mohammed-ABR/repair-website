@@ -14,7 +14,7 @@ export default function ContactPage() {
       <p className={`${pageLead} max-w-none`}>{contactIntro}</p>
 
       <dl
-        className={`mt-12 space-y-8 rounded-2xl border border-primary/10 bg-white p-8 shadow-soft-md sm:p-10 ${cardInteractive}`}
+        className={`mt-12 space-y-8 rounded-2xl border border-primary/10 bg-white p-6 shadow-soft-md sm:p-8 ${cardInteractive}`}
       >
         <div>
           <dt className="text-sm font-semibold uppercase tracking-wide text-foreground/50">
@@ -23,7 +23,7 @@ export default function ContactPage() {
           <dd className="mt-1">
             <a
               href={`tel:${contact.phone.replace(/\s/g, "")}`}
-              className="text-lg font-medium text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-90"
+              className="break-words text-base font-medium text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-90 md:text-lg"
             >
               {contact.phone}
             </a>
@@ -36,7 +36,7 @@ export default function ContactPage() {
           <dd className="mt-1">
             <a
               href={`mailto:${contact.email}`}
-              className="text-lg font-medium text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-90"
+              className="break-words text-base font-medium text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-90 md:text-lg"
             >
               {contact.email}
             </a>
@@ -46,7 +46,7 @@ export default function ContactPage() {
           <dt className="text-sm font-semibold uppercase tracking-wide text-foreground/50">
             Adres
           </dt>
-          <dd className="mt-1 text-lg text-foreground">{contact.address}</dd>
+          <dd className="mt-1 break-words text-base text-foreground md:text-lg">{contact.address}</dd>
         </div>
         <div>
           <dt className="text-sm font-semibold uppercase tracking-wide text-foreground/50">
@@ -55,7 +55,7 @@ export default function ContactPage() {
           <dd className="mt-1">
             <a
               href={`https://wa.me/${whatsappDigits}`}
-              className="text-lg font-medium text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-90"
+              className="break-words text-base font-medium text-primary transition-all duration-300 ease-in-out hover:underline hover:opacity-90 md:text-lg"
               rel="noopener noreferrer"
               target="_blank"
             >

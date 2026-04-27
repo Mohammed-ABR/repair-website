@@ -8,8 +8,8 @@ import { immersivePhoto } from "@/lib/image-presets";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const sectionSpacing = "py-10 md:py-16 lg:py-20";
-const headingClass = "text-2xl font-bold tracking-tight text-primary sm:text-3xl lg:text-4xl";
-const bodyClass = "text-sm leading-relaxed text-foreground/80 sm:text-base lg:text-lg";
+const headingClass = "break-words text-xl font-bold tracking-tight text-primary md:text-3xl";
+const bodyClass = "break-words text-base leading-relaxed text-foreground/80 md:text-lg lg:text-xl";
 
 function getFadeProps(reduceMotion: boolean, delay = 0) {
   return {
@@ -69,7 +69,7 @@ export function OverOnsPage() {
 
   return (
     <div className="overflow-hidden bg-[#f8fafc]">
-      <section className="relative isolate min-h-[52vh] overflow-hidden border-b border-white/10">
+      <section className="relative isolate overflow-hidden border-b border-white/10">
         <Image
           src="/images/about/about-main.jpg"
           alt="Over ons"
@@ -84,20 +84,20 @@ export function OverOnsPage() {
           className="pointer-events-none absolute inset-0 bg-linear-to-br from-black/50 via-primary/40 to-transparent"
           aria-hidden
         />
-        <div className={`relative z-10 ${pageContainer} flex min-h-[52vh] items-center justify-center py-10 md:py-16`}>
+        <div className={`relative z-10 ${pageContainer} flex items-center justify-center py-10 md:py-16`}>
           <m.div
             className="text-center text-white"
             {...fade(0)}
           >
-            <h1 className="text-2xl font-bold tracking-tight sm:text-4xl lg:text-6xl">Over ons</h1>
-            <p className="mt-4 text-sm font-medium text-white/92 sm:text-base lg:text-xl">Ervaring, kwaliteit en vertrouwen</p>
+            <h1 className="break-words text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl">Over ons</h1>
+            <p className="mt-4 break-words text-sm font-medium text-white/92 md:text-base">Ervaring, kwaliteit en vertrouwen</p>
           </m.div>
         </div>
       </section>
 
       <section className="border-b border-primary/10 bg-white">
         <div className={`${pageContainer} ${sectionSpacing}`}>
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-2">
             <m.div className="w-full" {...fade(0)}>
               <h2 className={headingClass}>Over ons</h2>
               <p className={`mt-5 ${bodyClass}`}>
@@ -146,7 +146,7 @@ export function OverOnsPage() {
             <p className={`mx-auto mt-4 max-w-2xl text-center ${bodyClass}`}>
               Dagelijks bouwen we vertrouwen op met snelle interventies en betrouwbare herstellingen.
             </p>
-            <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
               {stats.map((item, i) => (
                 <m.li key={item.label} {...fade(0.04 * i)}>
                   <article className="rounded-3xl border border-primary/10 bg-white p-4 text-center shadow-soft ring-1 ring-primary/6 sm:p-6">

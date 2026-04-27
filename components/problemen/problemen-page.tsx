@@ -128,13 +128,13 @@ export function ProblemenPage() {
       <div className={`${pageContainer} ${innerPageY}`}>
         <header className="max-w-2xl">
           <h1 className={pageTitle}>Veelvoorkomende problemen</h1>
-          <p className={`${cardBody} mt-5 max-w-xl text-base sm:text-[1.05rem]`}>
+          <p className={`${cardBody} mt-5 max-w-xl break-words text-sm md:text-base`}>
             Herkent u symptomen aan uw toestel? Wij komen ter plaatse voor een duidelijke diagnose en een professioneel
             herstel — zonder verrassingen achteraf.
           </p>
         </header>
 
-        <ul className="mt-12 grid list-none grid-cols-1 gap-4 p-0 sm:mt-14 md:grid-cols-2 md:gap-6 lg:mt-16 lg:grid-cols-3">
+        <ul className="mt-12 grid list-none grid-cols-1 gap-4 p-0 sm:mt-14 md:grid-cols-2 md:gap-8 lg:mt-16 lg:grid-cols-3">
           {devices.map(({ id, title, problems, Icon }) => (
             <li key={id}>
               <article className="flex h-full flex-col rounded-2xl border border-primary/10 bg-white p-4 shadow-sm ring-1 ring-primary/5 sm:p-6">
@@ -148,7 +148,7 @@ export function ProblemenPage() {
                   {problems.map((line) => (
                     <li
                       key={line}
-                      className="flex gap-2.5 wrap-break-word text-left text-sm font-medium leading-snug text-[#374151] sm:text-[0.95rem]"
+                      className="flex gap-2.5 break-words text-left text-sm font-medium leading-snug text-[#374151] md:text-base"
                     >
                       <CheckLine />
                       {line}
