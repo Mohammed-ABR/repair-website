@@ -30,7 +30,7 @@ import {
 import { cardPhotoFrame, cardPhotoWithHover, immersivePhoto } from "@/lib/image-presets";
 import { content } from "@/lib/content";
 
-const gridAfterIntro = "mt-10 md:mt-16";
+const gridAfterIntro = "mt-12 md:mt-20";
 
 const homeCoreServiceImages: Record<string, string> = {
   herstelling: "/images/services/repair-service.jpg",
@@ -39,7 +39,7 @@ const homeCoreServiceImages: Record<string, string> = {
 };
 
 const homeServiceCardClass =
-  "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-primary/10 bg-white/95 p-0 shadow-soft-md ring-1 ring-primary/6 backdrop-blur-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-soft-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-primary/10 bg-white/95 p-0 shadow-soft-md ring-1 ring-primary/6 backdrop-blur-[2px] transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-accent/25 hover:shadow-soft-lg hover:ring-accent/8 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100";
 
 const serviceChecklist = ["Binnen 24u service", "Ervaren techniekers", "Alle merken"] as const;
 
@@ -180,32 +180,31 @@ const whyGlyphs: Array<"clock" | "technician" | "bolt" | "shield"> = [
   "shield",
 ];
 
-const premiumBrands = [
-  { name: "Miele", slug: "miele" },
-  { name: "Bosch", slug: "bosch" },
-  { name: "Siemens", slug: "siemens" },
-  { name: "Neff", slug: "neff" },
-  { name: "AEG", slug: "aeg" },
-  { name: "Electrolux", slug: "electrolux" },
-  { name: "Zanussi", slug: "zanussi" },
-  { name: "Whirlpool", slug: "whirlpool" },
-  { name: "Bauknecht", slug: "bauknecht" },
-  { name: "Indesit", slug: "indesit" },
-  { name: "Hotpoint", slug: "hotpoint" },
-  { name: "Sharp", slug: "sharp" },
-  { name: "Samsung", slug: "samsung" },
-  { name: "LG", slug: "lg" },
-  { name: "Panasonic", slug: "panasonic" },
-  { name: "Beko", slug: "beko" },
-  { name: "Grundig", slug: "grundig" },
-  { name: "Gorenje", slug: "gorenje" },
-  { name: "Hisense", slug: "hisense" },
-  { name: "Haier", slug: "haier" },
-  { name: "Candy", slug: "candy" },
-  { name: "Hoover", slug: "hoover" },
-  { name: "Smeg", slug: "smeg" },
-  { name: "Pelgrim", slug: "pelgrim" },
-  { name: "Ikea", slug: "ikea" },
+const brands = [
+  { name: "Miele", file: "miele.svg" },
+  { name: "Bosch", file: "bosch.svg" },
+  { name: "Siemens", file: "siemens.svg" },
+  { name: "AEG", file: "aeg.svg" },
+  { name: "Electrolux", file: "electrolux.svg" },
+  { name: "Zanussi", file: "zanussi.svg" },
+  { name: "Whirlpool", file: "whirlpool.svg" },
+  { name: "Bauknecht", file: "bauknecht.svg" },
+  { name: "Indesit", file: "indesit.svg" },
+  { name: "Hotpoint", file: "hotpoint.svg" },
+  { name: "Sharp", file: "sharp.svg" },
+  { name: "Samsung", file: "samsung.svg" },
+  { name: "LG", file: "lg.svg" },
+  { name: "Panasonic", file: "panasonic.svg" },
+  { name: "Beko", file: "beko.svg" },
+  { name: "Grundig", file: "grundig.svg" },
+  { name: "Gorenje", file: "gorenje.svg" },
+  { name: "Hisense", file: "hisense.svg" },
+  { name: "Haier", file: "haier.svg" },
+  { name: "Candy", file: "candy.svg" },
+  { name: "Hoover", file: "hoover.svg" },
+  { name: "Smeg", file: "smeg.svg" },
+  { name: "Pelgrim", file: "Pelgrim.svg" },
+  { name: "Ikea", file: "ikea.svg" },
 ] as const;
 
 const commonProblems = [
@@ -273,14 +272,14 @@ export function CommonProblemsSection() {
           <h2 className={sectionTitle}>Veelvoorkomende problemen</h2>
         </div>
 
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 md:gap-8 lg:grid-cols-3 xl:grid-cols-4 sm:[&:nth-child(even)]:translate-y-2 md:[&:nth-child(even)]:translate-y-3 motion-reduce:sm:[&:nth-child(even)]:translate-y-0`}>
           {commonProblems.map((item, i) => (
             <m.li key={item.device} {...getScrollRevealChildProps(reduceMotion, i)}>
               <m.article
-                className="group flex h-full flex-col rounded-2xl border border-primary/10 bg-white p-4 shadow-soft-md ring-1 ring-primary/6 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-accent/35 hover:shadow-soft-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-6"
-                whileHover={reduceMotion ? undefined : { y: -4 }}
+                className="group flex h-full flex-col rounded-2xl border border-primary/10 bg-white p-5 shadow-soft-md ring-1 ring-primary/6 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-accent/28 hover:shadow-soft-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-6"
+                whileHover={reduceMotion ? undefined : { y: -2 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.995 }}
-                transition={{ type: "spring", stiffness: 360, damping: 24 }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
               >
                 <h3 className="text-xl font-semibold tracking-tight text-primary">{item.device}</h3>
 
@@ -330,13 +329,13 @@ export function TrustStripSection() {
       className="border-b border-primary/10 bg-background"
       {...getScrollRevealProps(reduceMotion)}
     >
-      <div className={`${pageContainer} py-10 md:py-16`}>
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+      <div className={`${pageContainer} py-12 md:py-16`}>
+        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:gap-7 lg:grid-cols-3 xl:grid-cols-4">
           {content.trustStrip.map((item, i) => (
             <m.li
               key={item.title}
               {...getScrollRevealChildProps(reduceMotion, i)}
-              className="flex gap-3 rounded-2xl border border-primary/8 bg-white/90 p-4 shadow-soft ring-1 ring-primary/4 transition-[transform,box-shadow,border-color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-soft-md motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="flex gap-3 rounded-2xl border border-primary/8 bg-white/90 p-4 shadow-soft ring-1 ring-primary/4 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-accent/22 hover:shadow-soft-md motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-5"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-secondary/12 ring-1 ring-accent-secondary/20">
                 <TrustStripIcon variant={trustStripIcons[i] ?? "shield"} />
@@ -364,23 +363,32 @@ export function ServicesCardsSection() {
       className="border-b border-primary/10 bg-linear-to-b from-background via-white to-background"
       {...getScrollRevealProps(reduceMotion)}
     >
-      <div className={`${pageContainer} py-10 md:py-16 lg:py-20`}>
+      <div className={`${pageContainer} ${sectionY}`}>
         <div className={sectionIntro}>
           <h2 className={sectionTitle}>Onze diensten</h2>
           <p className={sectionSubtitle}>
             Professionele herstelling, onderhoud en installatie met snelle service in Vlaanderen.
           </p>
         </div>
-        <ul className="mt-10 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <ul className="mt-12 grid grid-cols-1 items-stretch gap-6 sm:gap-7 md:mt-16 md:grid-cols-2 md:gap-x-8 md:gap-y-8 lg:grid-cols-3 lg:gap-8">
           {core.map((service, i) => {
             const src = homeCoreServiceImages[service.id];
+            const isThirdOfThree = core.length === 3 && i === 2;
             return (
-              <m.li key={service.id} {...getScrollRevealChildProps(reduceMotion, i)}>
+              <m.li
+                key={service.id}
+                className={
+                  isThirdOfThree
+                    ? "md:col-span-2 md:flex md:justify-center lg:col-span-1 lg:block"
+                    : ""
+                }
+                {...getScrollRevealChildProps(reduceMotion, i)}
+              >
                 <m.article
-                  className={homeServiceCardClass}
-                  whileHover={reduceMotion ? undefined : { y: -6 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.99 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 26 }}
+                  className={`${homeServiceCardClass} h-full w-full md:max-w-2xl lg:max-w-none`}
+                  whileHover={reduceMotion ? undefined : { y: -2 }}
+                  whileTap={reduceMotion ? undefined : { scale: 0.995 }}
+                  transition={{ type: "spring", stiffness: 420, damping: 30 }}
                 >
                   <div className={cardPhotoFrame}>
                     {src ? (
@@ -388,8 +396,8 @@ export function ServicesCardsSection() {
                         src={src}
                         alt={service.title}
                         fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className={`${cardPhotoWithHover} transition-transform duration-500 ease-out group-hover:scale-105`}
+                        sizes="(min-width: 1024px) 34vw, (min-width: 768px) 45vw, 100vw"
+                        className={cardPhotoWithHover}
                       />
                     ) : null}
                     <div
@@ -487,13 +495,17 @@ export function DevicesGridSection() {
             {content.devicesSectionSubtitle}
           </m.p>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-9`}>
           {gallery.map((item, index) => (
-            <m.li key={item.id} {...getScrollRevealChildProps(reduceMotion, index)}>
+            <m.li
+              key={item.id}
+              className="motion-reduce:lg:[&:nth-child(3n+2)]:translate-y-0 lg:[&:nth-child(3n+2)]:translate-y-5"
+              {...getScrollRevealChildProps(reduceMotion, index)}
+            >
               <m.article
-                className="group relative overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-soft-md ring-1 ring-primary/6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-accent/35 hover:shadow-soft-lg hover:ring-accent/15 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
-                whileHover={reduceMotion ? undefined : { y: -8 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="group relative h-full overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-soft-md ring-1 ring-primary/6 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-accent/28 hover:shadow-soft-lg hover:ring-accent/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                whileHover={reduceMotion ? undefined : { y: -2 }}
+                transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className={cardPhotoFrame}>
                   <Image
@@ -501,7 +513,7 @@ export function DevicesGridSection() {
                     alt={item.label}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className={`${cardPhotoWithHover} transition-transform duration-300 ease-in-out group-hover:scale-105`}
+                    className={cardPhotoWithHover}
                   />
                   <div
                     className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/72 via-black/32 to-transparent"
@@ -517,9 +529,9 @@ export function DevicesGridSection() {
                     type="button"
                     onClick={() => setSelectedDevice(item)}
                     className={`${buttonPrimary} min-h-11 w-full px-5 sm:w-auto`}
-                    whileHover={reduceMotion ? undefined : { scale: 1.03 }}
+                    whileHover={reduceMotion ? undefined : { scale: 1.02 }}
                     whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
                   >
                     Meer info
                   </m.button>
@@ -613,8 +625,8 @@ export function PricingSection() {
       <div className={`${pageContainer} ${sectionY}`}>
         <div className="mx-auto max-w-4xl">
           <h2 className={`${sectionTitle} text-center`}>{pricingSectionTitle}</h2>
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:items-stretch">
-            <div className="relative overflow-hidden rounded-[1.25rem] border-2 border-accent bg-linear-to-br from-accent/20 via-white to-white p-4 shadow-soft-lg ring-2 ring-accent/30 sm:p-8">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:items-stretch">
+            <div className="relative overflow-hidden rounded-[1.25rem] border-2 border-accent bg-linear-to-br from-accent/20 via-white to-white p-5 shadow-soft-lg ring-2 ring-accent/30 sm:p-8">
               <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-accent/25 blur-2xl" aria-hidden />
               <p className="text-sm font-semibold uppercase tracking-wide text-primary/70">
                 {pricingSection.diagnoseLabel}
@@ -627,7 +639,7 @@ export function PricingSection() {
                 probleem en onderdelen.
               </p>
             </div>
-            <ul className="flex flex-col justify-center gap-4 rounded-[1.25rem] border border-primary/10 bg-white p-4 shadow-soft-md sm:p-8">
+            <ul className="flex flex-col justify-center gap-5 rounded-[1.25rem] border border-primary/10 bg-white p-5 shadow-soft-md motion-safe:md:translate-y-2 sm:p-8 motion-reduce:md:translate-y-0">
               {pricingSection.bullets.map((line) => (
                 <li key={line} className="flex gap-3 text-base leading-relaxed text-foreground/85 sm:text-lg">
                   <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent-secondary" aria-hidden />
@@ -652,7 +664,7 @@ export function WhyChooseSection() {
           <h2 className={sectionTitle}>{content.homeWhyChooseTitle}</h2>
           <p className={sectionSubtitle}>{content.homeWhyChooseSubtitle}</p>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4 lg:[&:nth-child(3n+2)]:translate-y-4 xl:[&:nth-child(3n+2)]:translate-y-6 motion-reduce:lg:[&:nth-child(3n+2)]:translate-y-0`}>
           {content.homeWhyChoose.map((point, i) => (
             <m.li key={point.title} {...getScrollRevealChildProps(reduceMotion, i)}>
               <div className={cardGlass}>
@@ -669,6 +681,12 @@ export function WhyChooseSection() {
     </m.section>
   );
 }
+
+/** Tweede beeld naast “Over ons” — onderhoudswerk, visueel complementair bij technician shot */
+const aboutStorySecondaryImage = {
+  src: "/images/services/maintenance.jpg",
+  alt: "Professioneel onderhoud en nazorg van witgoed",
+} as const;
 
 export function AboutSection() {
   const reduceMotion = useReducedMotion();
@@ -747,19 +765,37 @@ export function AboutSection() {
 
           <m.div className="lg:col-span-6" {...getScrollRevealChildProps(reduceMotion, 1)}>
             <m.div
-              className="group relative overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-soft-lg ring-1 ring-primary/8"
-              whileHover={reduceMotion ? undefined : { y: -4 }}
-              transition={{ type: "spring", stiffness: 340, damping: 26 }}
+              className="group relative mx-auto w-full max-w-lg lg:max-w-none"
+              whileHover={reduceMotion ? undefined : { y: -2 }}
+              transition={{ type: "spring", stiffness: 380, damping: 32 }}
             >
-              <div className="relative aspect-4/3 w-full">
-                <Image
-                  src={aboutHeroImage.src}
-                  alt="Technieker aan het werk bij een huishoudtoestel"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className={`${immersivePhoto} transition-transform duration-500 ease-out group-hover:scale-105`}
-                />
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/45 via-primary/10 to-transparent" aria-hidden />
+              <div className="flex flex-col gap-5 md:gap-0">
+                <div className="relative z-10 aspect-4/3 w-full overflow-hidden rounded-2xl bg-primary/3 shadow-[0_14px_44px_-18px_rgba(15,23,42,0.22)] ring-1 ring-black/6 md:ml-auto md:w-[90%] lg:w-[78%]">
+                  <Image
+                    src={aboutHeroImage.src}
+                    alt={aboutHeroImage.alt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 100vw"
+                    className={`${immersivePhoto} transition-transform duration-200 ease-out motion-reduce:transition-none md:group-hover:scale-[1.02]`}
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/40 via-primary/8 to-transparent"
+                    aria-hidden
+                  />
+                </div>
+                <div className="relative z-20 aspect-4/3 w-full overflow-hidden rounded-2xl bg-primary/3 shadow-[0_18px_48px_-14px_rgba(15,23,42,0.2)] ring-1 ring-black/6 md:-mt-10 md:w-[88%] lg:-mt-14 lg:w-[76%] motion-reduce:md:mt-4 motion-reduce:lg:mt-6">
+                  <Image
+                    src={aboutStorySecondaryImage.src}
+                    alt={aboutStorySecondaryImage.alt}
+                    fill
+                    sizes="(min-width: 1024px) 38vw, (min-width: 768px) 42vw, 100vw"
+                    className={`${immersivePhoto} transition-transform duration-200 ease-out motion-reduce:transition-none md:group-hover:scale-[1.02]`}
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/35 via-transparent to-transparent"
+                    aria-hidden
+                  />
+                </div>
               </div>
             </m.div>
           </m.div>
@@ -795,27 +831,31 @@ export function BrandsShowcaseSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <m.section className="border-b border-primary/10 bg-background" {...getScrollRevealProps(reduceMotion)}>
-      <div className={`${pageContainer} ${sectionY}`}>
-        <div className={sectionIntro}>
-          <h2 className={sectionTitle}>Merken die wij herstellen</h2>
+    <m.section
+      className="border-t border-gray-100 border-b border-primary/10 bg-background text-center"
+      {...getScrollRevealProps(reduceMotion)}
+    >
+      <div className={`${pageContainer} py-12 md:py-16 lg:py-20`}>
+        <div className={`${sectionIntro} mx-auto max-w-3xl text-center`}>
+          <h2 className={sectionTitle}>Wij werken met alle topmerken</h2>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
-          {premiumBrands.map((brand, i) => (
-            <m.li key={brand.name} {...getScrollRevealChildProps(reduceMotion, i)}>
-              <div className="group flex min-h-16 items-center justify-center px-3 py-2">
-                <Image
-                  src={`https://cdn.simpleicons.org/${brand.slug}`}
-                  alt={brand.name}
-                  width={150}
-                  height={46}
-                  className="h-8 w-auto max-w-35 object-contain grayscale opacity-65 transition-all duration-300 ease-out group-hover:grayscale-0 group-hover:opacity-100 sm:h-9"
-                  unoptimized
-                />
-              </div>
-            </m.li>
-          ))}
-        </ul>
+        <div className="mx-auto w-full max-w-[1100px]">
+          <ul
+            className={`${gridAfterIntro} grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-10 md:gap-y-12 lg:grid-cols-6`}
+          >
+            {brands.map((brand, i) => (
+              <m.li key={brand.name} {...getScrollRevealChildProps(reduceMotion, i)} className="w-full">
+                <div className="flex h-16 w-full items-center justify-center md:h-20">
+                  <img
+                    src={`/images/brands/${brand.file}`}
+                    alt={brand.name}
+                    className="mx-auto max-h-10 max-w-[120px] object-contain grayscale opacity-70 transition-[transform,filter,opacity] duration-200 ease-out hover:scale-[1.02] hover:grayscale-0 hover:opacity-100 motion-reduce:hover:scale-100 md:max-h-12"
+                  />
+                </div>
+              </m.li>
+            ))}
+          </ul>
+        </div>
       </div>
     </m.section>
   );
@@ -831,7 +871,7 @@ export function ReviewsSection() {
           <h2 className={sectionTitleOnDark}>{content.reviewsSectionTitle}</h2>
           <p className={sectionSubtitleOnDark}>{content.reviewsSectionSubtitle}</p>
         </div>
-        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
+        <ul className={`${gridAfterIntro} grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4`}>
           {content.reviews.map((review, i) => (
             <m.li key={review.name + review.location} {...getScrollRevealChildProps(reduceMotion, i)}>
               <article className={`${cardReview} h-full`}>
@@ -914,7 +954,7 @@ export function LocationsSection() {
           </m.div>
         </div>
 
-        <p className="mt-10 text-center text-base font-medium text-white/80 md:text-lg lg:text-xl sm:mt-12">
+        <p className="mt-10 text-center text-base font-medium text-primary/70 md:text-lg sm:mt-12">
           Wij zijn actief in heel Vlaanderen en omgeving
         </p>
       </div>
@@ -940,9 +980,9 @@ export function FaqSection() {
               return (
                 <li key={item.question}>
                   <m.article
-                    className="group overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-soft-md ring-1 ring-primary/6 transition-[border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-soft-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                    className="group overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-soft-md ring-1 ring-primary/6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-accent/22 hover:shadow-soft-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     whileHover={reduceMotion ? undefined : { y: -2 }}
-                    transition={{ type: "spring", stiffness: 360, damping: 26 }}
+                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
                     {...getScrollRevealChildProps(reduceMotion, index)}
                   >
                     <button
@@ -953,7 +993,7 @@ export function FaqSection() {
                     >
                       <span className="flex items-center gap-3">
                         <span
-                          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-secondary/12 text-accent-secondary ring-1 ring-accent-secondary/25 transition-transform duration-300 group-hover:scale-105"
+                          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-secondary/12 text-accent-secondary ring-1 ring-accent-secondary/25 transition-transform duration-200 ease-out group-hover:scale-[1.02]"
                           aria-hidden
                         >
                           <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
@@ -965,7 +1005,7 @@ export function FaqSection() {
                         <span className="text-base font-semibold leading-tight text-primary sm:text-lg">{item.question}</span>
                       </span>
                       <span
-                        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/15 text-primary transition-transform duration-300 ${
+                        className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/15 text-primary transition-transform duration-200 ease-out ${
                           isOpen ? "rotate-45" : "rotate-0"
                         }`}
                         aria-hidden
@@ -981,7 +1021,7 @@ export function FaqSection() {
                           initial={reduceMotion ? { opacity: 1, height: "auto", y: 0 } : { opacity: 0, height: 0, y: -4 }}
                           animate={{ opacity: 1, height: "auto", y: 0 }}
                           exit={reduceMotion ? { opacity: 0 } : { opacity: 0, height: 0, y: -4 }}
-                          transition={reduceMotion ? { duration: 0 } : { duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                          transition={reduceMotion ? { duration: 0 } : { duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
                           className="overflow-hidden"
                         >
                           <p className="break-words px-6 pb-6 text-sm leading-relaxed text-foreground/80 sm:px-7 sm:pb-7 md:text-base">
@@ -1069,15 +1109,15 @@ export function CtaSection() {
         }}
         aria-hidden
       />
-      <div className={`${pageContainer} relative py-10 md:py-16 lg:py-20`}>
+      <div className={`${pageContainer} relative py-14 md:py-16 lg:py-24`}>
         <div className="mx-auto max-w-2xl text-center sm:max-w-3xl">
-          <h2 className="text-pretty break-words text-xl font-semibold tracking-tight md:text-3xl">
+          <h2 className="text-pretty wrap-break-word text-xl font-semibold tracking-tight text-white md:text-[1.75rem] md:leading-snug lg:text-[2rem]">
             {content.ctaSectionTitle}
           </h2>
-          <p className="mt-4 break-words text-sm leading-relaxed text-white/88 md:text-base">
+          <p className="mt-5 wrap-break-word text-sm font-normal leading-relaxed text-white/80 md:mt-6 md:text-base">
             {content.ctaSectionDescription}
           </p>
-          <div className="mt-8 sm:mt-10">
+          <div className="mt-9 sm:mt-11">
             <Link
               href="/herstelling-aanvragen"
               className={`${buttonPrimary} inline-flex min-h-12 w-full items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold shadow-soft-lg ring-1 ring-white/15 sm:w-auto sm:min-h-14 sm:px-10 sm:py-4 sm:text-lg`}

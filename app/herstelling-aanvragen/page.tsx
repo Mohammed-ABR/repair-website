@@ -173,7 +173,7 @@ export default function HerstellingAanvragenPage() {
                 <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p className="text-base font-bold tracking-tight text-emerald-900 sm:text-lg">Geen oplossing? Geen kosten.</p>
+            <p className="text-base font-bold tracking-tight text-emerald-900 sm:text-lg">U beslist na de diagnose.</p>
           </m.div>
 
           <div className="relative mt-8 sm:mt-10">

@@ -26,8 +26,8 @@
     0 2px 8px -2px rgb(10 37 64 / 0.08);
   --shadow-soft-md: 0 2px 4px -1px rgb(10 37 64 / 0.06),
     0 8px 20px -6px rgb(10 37 64 / 0.1);
-  --shadow-soft-lg: 0 4px 6px -2px rgb(10 37 64 / 0.06),
-    0 16px 32px -8px rgb(10 37 64 / 0.12);
+  --shadow-soft-lg: 0 4px 6px -2px rgb(10 37 64 / 0.055),
+    0 20px 40px -12px rgb(10 37 64 / 0.11);
 }
 
 body {

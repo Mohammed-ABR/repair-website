@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/home/hero-section";
+import { FoutcodesSection } from "@/components/home/foutcodes-section";
 import {
   AboutSection,
   BrandsShowcaseSection,
@@ -30,6 +31,7 @@ export default function Home() {
       <BrandsShowcaseSection />
       <LocationsSection />
       <FaqSection />
+      <FoutcodesSection />
       <CtaSection />
       <MapSection />
     </div>

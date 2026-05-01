@@ -38,8 +38,8 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-60 border-b border-primary/10 bg-white/95 backdrop-blur-md transition-shadow duration-300 ${
-        scrolled ? "shadow-[0_10px_30px_-18px_rgba(15,23,42,0.34)]" : "shadow-none"
+      className={`sticky top-0 z-60 border-b border-primary/10 bg-white/95 backdrop-blur-md transition-shadow duration-200 ease-out ${
+        scrolled ? "shadow-[0_12px_32px_-16px_rgba(15,23,42,0.28)]" : "shadow-none"
       }`}
     >
       <div className="relative mx-auto flex max-w-7xl items-center justify-between overflow-x-hidden px-4 py-3 sm:gap-3 lg:min-h-18 lg:gap-6">

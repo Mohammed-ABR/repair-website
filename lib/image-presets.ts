@@ -18,4 +18,4 @@ export const cardPhotoFrame =
 /**
  * Use on `<Image fill />` when inside `cardPhotoFrame` and an ancestor has `group` (hover zoom).
  */
-export const cardPhotoWithHover = `${photoCover} transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.05] motion-reduce:group-hover:scale-100`;
+export const cardPhotoWithHover = `${photoCover} transition-transform duration-200 ease-out will-change-transform group-hover:scale-[1.02] motion-reduce:group-hover:scale-100`;
